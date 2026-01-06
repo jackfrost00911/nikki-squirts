@@ -96,40 +96,47 @@ permalink: /booking/
 <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 
 <script>
-  flatpickr("#date", {
-    enableTime: true,
-    minDate: "today",
-    dateFormat: "Y-m-d H:i",
-    theme: "dark"
-  });
+  // Wait for the page to load
+  document.addEventListener('DOMContentLoaded', function() {
+    const bookingForm = document.getElementById('booking-form');
+    const statusText = document.getElementById('booking-status');
 
-  const form = document.getElementById('booking-form');
-  const status = document.getElementById('booking-status');
-
-  form.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    status.style.display = 'block';
-    status.textContent = 'Submitting to Nikki...';
-    
-    const data = Object.fromEntries(new FormData(form));
-
-    try {
-      const response = await fetch(form.action, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(data)
-      });
-      if (response.ok) {
-        status.style.color = 'var(--gold)';
-        status.textContent = 'Your request has been sent successfully.';
-        form.reset();
-      } else {
-        status.style.color = 'red';
-        status.textContent = 'Submission failed. Please try again.';
-      }
-    } catch (err) {
-      status.style.color = 'red';
-      status.textContent = 'Error connecting to server.';
+    if (!bookingForm) {
+      console.error("Form not found! Check your ID.");
+      return;
     }
+
+    bookingForm.addEventListener('submit', async function(e) {
+      e.preventDefault();
+      console.log("Submit clicked, sending data...");
+
+      statusText.style.display = 'block';
+      statusText.textContent = 'Processing your invitation...';
+      
+      const formData = new FormData(bookingForm);
+      const data = Object.fromEntries(formData.entries());
+
+      try {
+        const response = await fetch('https://nikki-squirtss-backend.onrender.com/submit-booking', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(data)
+        });
+
+        if (response.ok) {
+          statusText.style.color = 'var(--gold)';
+          statusText.textContent = 'Invitation sent successfully. Nikki will reach out soon.';
+          bookingForm.reset();
+        } else {
+          statusText.style.color = 'red';
+          statusText.textContent = 'Server error. Please email nicolehayley69@proton.me directly.';
+        }
+      } catch (err) {
+        console.error("Fetch error:", err);
+        statusText.style.color = 'red';
+        statusText.textContent = 'Connection error. Please check your internet.';
+      }
+    });
   });
+</script>
 </script>
