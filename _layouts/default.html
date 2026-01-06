@@ -23,14 +23,23 @@
   </script>
 </head>
 <body>
-  <nav class="topnav">
-    <div class="nav-inner">
+  <nav class="topnav" aria-label="Main navigation">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo" style="font-family: var(--font-serif); font-weight: 700; color: var(--gold); text-decoration: none; letter-spacing: 2px;">
+      NIKKI SQUIRTSS
+    </a>
+
+    <div class="nav-links">
       <a href="/">Home</a>
       <a href="/about/">About</a>
+      <a href="/services/">Services</a>
       <a href="/gallery/">Gallery</a>
-      <a href="/#booking" class="cta">Booking</a>
+      <a href="/blog/">Blog</a>
+      <a href="/faq/">FAQ</a>
+      <a href="/booking/" class="cta">Booking</a>
     </div>
-  </nav>
+  </div>
+</nav>
 
   <main class="container">
     {{ content }}
