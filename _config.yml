@@ -1,0 +1,29 @@
+# Site Settings
+title: Nikki Squirts
+email: your-email@example.com
+description: >- 
+  Write a short, catchy description for your site here. 
+  This shows up in Google search results.
+
+# URL Settings for Custom Domain
+url: "https://nikkisquirtss.com"
+baseurl: ""  # Leave this empty because you are using a custom domain
+
+# Build Settings
+theme: minima
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+# Social Links
+github_username: jackfrost00911
+
+# Exclusion list
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules/
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
