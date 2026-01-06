@@ -88,7 +88,50 @@ h1, h2, h3 {
   transform: translateY(30px);
   transition: all 0.8s ease-out;
 }
+/* Navigation Polish */
+.nav-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
 
+.nav-links {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.nav-links a {
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--text-main);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: var(--gold);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .nav-inner {
+    flex-direction: column;
+    gap: 15px;
+  }
+  .nav-links {
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .nav-links a {
+    font-size: 0.75rem;
+  }
+}
 .reveal.visible {
   opacity: 1;
   transform: translateY(0);
