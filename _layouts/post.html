@@ -1,0 +1,27 @@
+---
+layout: default
+---
+<article class="container" style="max-width: 800px; margin: 0 auto; padding: 80px 20px;">
+  <div class="reveal">
+    <a href="/blog/" style="color: var(--gold); text-decoration: none; font-size: 0.9rem;">← Back to Blog</a>
+    <div style="margin-top: 20px; color: var(--text-muted);">{{ page.date | date: "%B %e, %Y" }} | {{ page.category }}</div>
+    <h1 style="font-size: 3rem; margin: 10px 0 40px 0; border-bottom: 1px solid var(--gold); padding-bottom: 20px;">{{ page.title }}</h1>
+  </div>
+
+  <div class="blog-content reveal" style="line-height: 1.8; font-size: 1.1rem;">
+    {{ content }}
+  </div>
+
+  <div class="card reveal" style="margin-top: 60px; text-align: center;">
+    <h3>Enjoyed this insight?</h3>
+    <p>Join my VIP list for exclusive content and industry updates.</p>
+    <a href="/contact/" class="cta" style="display: inline-block;">Join the VIP List</a>
+  </div>
+</article>
+
+<style>
+  .blog-content h5 { color: var(--gold); font-size: 1.4rem; margin-top: 40px; }
+  .blog-content p { margin-bottom: 20px; }
+  .blog-content ul { color: var(--text-muted); margin-bottom: 20px; }
+  .blog-content strong { color: var(--accent); }
+</style>
