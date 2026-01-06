@@ -20,6 +20,9 @@ plugins:
 # Social Links
 github_username: jackfrost00911
 
+google_analytics: "G-XT9L8DGF96"
+ahrefs_key: "vosYzS3B2xnaj3cb2PRRNQ"
+
 # Exclusion list
 exclude:
   - Gemfile
