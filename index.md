@@ -37,14 +37,18 @@ permalink: /
 </div>
 
 <section id="gallery-strip" class="reveal" style="margin-bottom: 60px;">
-  <h3 class="section-title" style="text-align: center; margin-bottom: 30px;">Gallery Preview</h3>
-  <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 15px;">
-    <a href="https://raw.githubusercontent.com/jackfrost00911/Nikki-Page/refs/heads/main/Smiles.jpg" class="glightbox"><img src="https://raw.githubusercontent.com/jackfrost00911/Nikki-Page/refs/heads/main/Smiles.jpg" style="width: 100%; border-radius: 8px;"></a>
-    <a href="https://raw.githubusercontent.com/jackfrost00911/Nikki-Page/refs/heads/main/Mirrorshot.jpg" class="glightbox"><img src="https://raw.githubusercontent.com/jackfrost00911/Nikki-Page/refs/heads/main/Mirrorshot.jpg" style="width: 100%; border-radius: 8px;"></a>
-    <a href="https://raw.githubusercontent.com/jackfrost00911/Nikki-Page/refs/heads/main/Monday.jpg" class="glightbox"><img src="https://raw.githubusercontent.com/jackfrost00911/Nikki-Page/refs/heads/main/Monday.jpg" style="width: 100%; border-radius: 8px;"></a>
-  </div>
-</section>
-
+  <h3 class="section-title" style="text-align: center; margin-bottom: 30px;
+<div class="gallery card">
+  <a href="/assets/images/Smiles.jpg" class="glightbox">
+    <img src="/assets/images/Smiles.jpg" alt="Nikki Smiles">
+  </a>
+  <a href="/assets/images/Mirrorshot.jpg" class="glightbox">
+    <img src="/assets/images/Mirrorshot.jpg" alt="Nikki Mirror Shot">
+  </a>
+  <a href="/assets/images/Monday.jpg" class="glightbox">
+    <img src="/assets/images/Monday.jpg" alt="Nikki Monday">
+  </a>
+</div>
 <section class="reveal" style="text-align: center; padding: 60px 20px; background: linear-gradient(rgba(0,0,0,0), var(--card-bg)); border-radius: 20px;">
   <h2 style="font-size: 2.5rem;">Ready to indulge?</h2>
   <p style="color: var(--text-muted); margin-bottom: 30px;">Every connection begins with a conversation. Secure your time today.</p>
