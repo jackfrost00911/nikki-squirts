@@ -9,8 +9,10 @@ description: >-
 url: "https://nikkisquirtss.com"
 baseurl: ""  # Leave this empty because you are using a custom domain
 
-# Build Settings
-theme: minima
+# Remove 'theme: minima'
+remote_theme: none
+sass:
+  style: :compressed
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
