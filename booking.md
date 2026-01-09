@@ -38,7 +38,8 @@ permalink: /booking/
       
       <form id="booking-form" action="https://formspree.io/f/meeejayq" method="POST">
         
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 20px;">
+        <input type="hidden" name="_subject" value="New Reservation Request - Nikki Squirtss">
+        <input type="hidden" name="_next" value="https://jackfrost00911.github.io/thanks/"> <input type="text" name="_gotcha" style="display:none"> <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 20px;">
           <div>
             <label style="color: var(--gold); font-size: 0.8rem; text-transform: uppercase;">First Name *</label>
             <input type="text" name="firstName" required style="width: 100%; background: #000; border: 1px solid #333; padding: 12px; color: #fff;">
@@ -82,11 +83,10 @@ permalink: /booking/
         </div>
 
         <div style="margin-bottom: 30px; font-size: 0.85rem; color: var(--text-muted);">
-          <label><input type="checkbox" required> I agree to the terms of companionship and screening verification.</label>
+          <label><input type="checkbox" required name="agreed_to_terms"> I agree to the terms of companionship and screening verification.</label>
         </div>
 
-        <button type="submit" class="cta" style="width: 100%; padding: 18px; font-size: 1.1rem; cursor: pointer; border: none;">Submit Invitation</button>
-        <p id="booking-status" style="text-align: center; margin-top: 15px; display: none;"></p>
+        <button type="submit" class="cta" style="width: 100%; padding: 18px; font-size: 1.1rem; cursor: pointer; border: none; background: var(--gold); color: black; font-weight: bold;">Submit Invitation</button>
       </form>
     </div>
   </section>
@@ -96,46 +96,12 @@ permalink: /booking/
 <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 
 <script>
-  // Wait for the page to load
   document.addEventListener('DOMContentLoaded', function() {
-    const bookingForm = document.getElementById('booking-form');
-    const statusText = document.getElementById('booking-status');
-
-    if (!bookingForm) {
-      console.error("Form not found! Check your ID.");
-      return;
-    }
-
-    bookingForm.addEventListener('submit', async function(e) {
-      e.preventDefault();
-      console.log("Submit clicked, sending data...");
-
-      statusText.style.display = 'block';
-      statusText.textContent = 'Processing your invitation...';
-      
-      const formData = new FormData(bookingForm);
-      const data = Object.fromEntries(formData.entries());
-
-      try {
-        const response = await fetch('https://nikki-squirtss-backend.onrender.com/submit-booking', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(data)
-        });
-
-        if (response.ok) {
-          statusText.style.color = 'var(--gold)';
-          statusText.textContent = 'Invitation sent successfully. Nikki will reach out soon.';
-          bookingForm.reset();
-        } else {
-          statusText.style.color = 'red';
-          statusText.textContent = 'Server error. Please email nicolehayley69@proton.me directly.';
-        }
-      } catch (err) {
-        console.error("Fetch error:", err);
-        statusText.style.color = 'red';
-        statusText.textContent = 'Connection error. Please check your internet.';
-      }
+    // Initialize date picker
+    flatpickr("#date", {
+      enableTime: true,
+      dateFormat: "Y-m-d H:i",
+      minDate: "today",
     });
   });
 </script>
