@@ -36,7 +36,7 @@ permalink: /booking/
     <div class="card" style="background: linear-gradient(145deg, var(--card-bg), #000); padding: 50px;">
       <h2 style="margin-bottom: 30px; text-align: center;">Reservation Details</h2>
       
-      <form id="booking-form" action="https://nikki-squirtss-backend.onrender.com/submit-booking" method="POST">
+      <form id="booking-form" action="https://formspree.io/f/meeejayq" method="POST">
         
         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 20px;">
           <div>
@@ -138,5 +138,4 @@ permalink: /booking/
       }
     });
   });
-</script>
 </script>
